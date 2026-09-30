@@ -1,0 +1,7 @@
+User-agent: *
+Disallow: /api/
+Disallow: /jr-tokai/
+Disallow: /matome/
+Disallow: /functions/
+
+Sitemap: https://kudo-tabi.pages.dev/sitemap.xml
