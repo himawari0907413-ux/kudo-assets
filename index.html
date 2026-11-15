@@ -23,7 +23,9 @@
   h2 { font-size:19px; margin:32px 0 4px; }
   .lead { color:var(--sub); font-size:14px; margin:0 0 12px; }
   .cards { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-  .card { background:var(--card); border-radius:16px; padding:16px; }
+  .card { background:var(--card); border-radius:16px; padding:16px; overflow:hidden; }
+  .ph { display:block; width:calc(100% + 32px); max-width:none; height:auto; aspect-ratio:16/9; object-fit:cover; margin:-16px -16px 12px; background:var(--line); }
+  .facts { font-size:13px; color:var(--sub); margin-top:4px; } .facts b { color:var(--ink); }
   .name { font-weight:700; font-size:17px; }
   .meta { color:var(--sub); font-size:13px; }
   .note { margin:8px 0 12px; font-size:15px; }
@@ -38,7 +40,7 @@
   <div class="pr">PR：このページには楽天トラベルのアフィリエイトリンクを含みます</div>
   <span class="chip">子連れ宿メモ</span>
   <h1>子連れで外さない宿まとめ</h1>
-  <p class="intro">東京から行ける週末旅。Threadsで反応が多かった宿を中心に集めました。空室・料金は日程で変わるので、リンク先で確認してください。</p>
+  <p class="intro">東京から行ける週末旅。Threadsで反応が多かった宿を中心に集めました。評価と最安の目安は楽天トラベルの掲載情報です（2026/11/15時点）。空室・料金は日程で変わるので、リンク先で確認してください。</p>
   <a class="more" href="/ranking/">🏆 家族の口コミで比べる子連れ宿ランキング →</a>
   <nav class="areas"><a href="/area/chiba/">千葉<small>6軒</small></a><a href="/area/tochigi/">栃木<small>11軒</small></a><a href="/area/gunma/">群馬<small>10軒</small></a><a href="/area/kanagawa/">箱根・神奈川<small>5軒</small></a><a href="/area/ibaraki/">茨城<small>3軒</small></a><a href="/area/shizuoka/">伊豆・静岡<small>3軒</small></a></nav>
   <nav class="areas"><a href="/theme/heyashoku/">部屋食・個室食</a><a href="/theme/pool/">プール</a><a href="/theme/kids/">キッズルーム・遊び場</a><a href="/theme/akachan/">赤ちゃん連れ</a></nav>
@@ -48,52 +50,68 @@
       <p class="lead">Threadsの投稿でリンクがよく開かれている宿です。</p>
       <ul class="cards">
       <li class="card">
-        <div class="name">ホテルサンバレー那須</div>
-        <div class="meta">栃木県</div>
-        <p class="note">プール＆温泉で子どもが大喜び🎡</p>
-        <a class="more" href="/yado/sunvalley-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F20574%2F" data-h="20574" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
-        <div class="name">亀の井ホテル 九十九里</div>
-        <div class="meta">千葉県</div>
-        <p class="note">九十九里の海を望む絶景リゾート</p>
-        <a class="more" href="/yado/kamenoi-kujukuri/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F104529%2F" data-h="104529" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
-        <div class="name">亀の井ホテル 日光湯西川</div>
-        <div class="meta">栃木県</div>
-        <p class="note">オールインクルーシブで子どもと温泉三昧</p>
-        <a class="more" href="/yado/kamenoi-nikko-yunishigawa/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F183257%2F" data-h="183257" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
-        <div class="name">BUB RESORT</div>
-        <div class="meta">千葉県</div>
-        <p class="note">15種以上のアクティビティ食事飲み物全込み</p>
-        <a class="more" href="/yado/bub-resort/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F177773%2F" data-h="177773" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/5766/5766.jpg" alt="みなかみホテルジュラク（楽天トラベル掲載写真）" loading="eager" decoding="async" width="640" height="360">
         <div class="name">みなかみホテルジュラク</div>
         <div class="meta">群馬県</div>
+        <div class="facts">楽天の評価 <b>4.65</b>（4,189件）｜最安の目安 <b>17,000円〜</b></div>
         <p class="note">「水のテラス」と露天風呂♨️</p>
         <a class="more" href="/yado/minakami-juraku/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F5766%2F" data-h="5766" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/177773/177773.jpg" alt="BUB RESORT（楽天トラベル掲載写真）" loading="eager" decoding="async" width="640" height="360">
+        <div class="name">BUB RESORT</div>
+        <div class="meta">千葉県</div>
+        <div class="facts">楽天の評価 <b>4.33</b>（230件）｜最安の目安 <b>33,880円〜</b></div>
+        <p class="note">15種以上のアクティビティ食事飲み物全込み</p>
+        <a class="more" href="/yado/bub-resort/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F177773%2F" data-h="177773" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/20574/20574.jpg" alt="ホテルサンバレー那須（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">ホテルサンバレー那須</div>
+        <div class="meta">栃木県</div>
+        <div class="facts">楽天の評価 <b>4.22</b>（9,294件）｜最安の目安 <b>12,100円〜</b></div>
+        <p class="note">プール＆温泉で子どもが大喜び🎡</p>
+        <a class="more" href="/yado/sunvalley-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F20574%2F" data-h="20574" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/5950/5950.jpg" alt="大洗ホテル（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">大洗ホテル</div>
         <div class="meta">茨城県</div>
+        <div class="facts">楽天の評価 <b>4.57</b>（2,964件）｜最安の目安 <b>23,000円〜</b></div>
         <p class="note">大洗海岸目の前のオールインクルーシブ</p>
         <a class="more" href="/yado/oarai-hotel/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F5950%2F" data-h="5950" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
-        <div class="name">鬼怒川温泉 あさや</div>
-        <div class="meta">栃木県</div>
-        <p class="note">和洋中バイキングと森の大浴場で子どもが大満足♨️</p>
-        <a class="more" href="/yado/kinugawa-asaya/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F8643%2F" data-h="8643" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/49322/49322.jpg" alt="亀の井ホテル 鴨川（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">亀の井ホテル 鴨川</div>
+        <div class="meta">千葉県</div>
+        <div class="facts">楽天の評価 <b>4.20</b>（1,731件）｜最安の目安 <b>6,950円〜</b></div>
+        <p class="note">鴨川の自然に囲まれた温泉リゾート</p>
+        <a class="more" href="/yado/kamenoi-kamogawa/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F49322%2F" data-h="49322" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
-        <div class="name">アンダの森 伊豆いっぺき湖</div>
-        <div class="meta">静岡県</div>
-        <p class="note">アクティビティ20種以上で1日遊び尽くせる🎡</p>
-        <a class="more" href="/yado/anda-no-mori-izu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F70720%2F" data-h="70720" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/9598/9598.jpg" alt="草津ナウリゾートホテル（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">草津ナウリゾートホテル</div>
+        <div class="meta">群馬県</div>
+        <div class="facts">楽天の評価 <b>4.42</b>（3,445件）｜最安の目安 <b>20,300円〜</b></div>
+        <p class="note">室内プール付き！草津温泉で子ども大喜び🎡</p>
+        <a class="more" href="/yado/kusatsu-now-resort/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F9598%2F" data-h="9598" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/104539/104539.jpg" alt="亀の井ホテル 大洗（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">亀の井ホテル 大洗</div>
+        <div class="meta">茨城県</div>
+        <div class="facts">楽天の評価 <b>4.07</b>（2,062件）｜最安の目安 <b>10,110円〜</b></div>
+        <p class="note">大洗の海と温泉でリフレッシュ🌊</p>
+        <a class="more" href="/yado/kamenoi-oarai/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F104539%2F" data-h="104539" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/13569/13569.jpg" alt="マホロバ・マインズ三浦（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">マホロバ・マインズ三浦</div>
+        <div class="meta">神奈川県</div>
+        <div class="facts">楽天の評価 <b>4.16</b>（2,752件）｜最安の目安 <b>7,200円〜</b></div>
+        <p class="note">三浦海岸一望の温泉プール付きリゾート</p>
+        <a class="more" href="/yado/mahoroba-mines-miura/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F13569%2F" data-h="13569" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li></ul>
     </section>
     <section>
@@ -101,40 +119,52 @@
       <p class="lead">プールやアクティビティ、食事込みで「子どもが勝手に遊んでくれる」系。</p>
       <ul class="cards">
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/70720/70720.jpg" alt="アンダの森 伊豆いっぺき湖（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">アンダの森 伊豆いっぺき湖</div>
+        <div class="meta">静岡県</div>
+        <div class="facts">楽天の評価 <b>4.62</b>（4,645件）｜最安の目安 <b>15,800円〜</b></div>
+        <p class="note">アクティビティ20種以上で1日遊び尽くせる🎡</p>
+        <a class="more" href="/yado/anda-no-mori-izu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F70720%2F" data-h="70720" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/167342/167342.jpg" alt="THE KEY HIGHLAND NASU（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">THE KEY HIGHLAND NASU</div>
         <div class="meta">栃木県</div>
+        <div class="facts">楽天の評価 <b>4.68</b>（569件）｜最安の目安 <b>26,400円〜</b></div>
         <p class="note">森の露天風呂と暖炉で贅沢な時間♨️</p>
         <a class="more" href="/yado/the-key-highland-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F167342%2F" data-h="167342" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/1917/1917.jpg" alt="グランドニッコー東京 台場（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">グランドニッコー東京 台場</div>
         <div class="meta">東京</div>
+        <div class="facts">楽天の評価 <b>4.59</b>（9,880件）｜最安の目安 <b>15,045円〜</b></div>
         <p class="note">お台場ハーバービューの絶景ステイ</p>
         <a class="more" href="/yado/grand-nikko-daiba/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F1917%2F" data-h="1917" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/158612/158612.jpg" alt="ラ・ジェント・ホテル東京ベイ（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">ラ・ジェント・ホテル東京ベイ</div>
         <div class="meta">千葉県</div>
+        <div class="facts">楽天の評価 <b>4.30</b>（5,370件）｜最安の目安 <b>3,580円〜</b></div>
         <p class="note">ディズニー近く！無料シャトル付き</p>
         <a class="more" href="/yado/la-gent-tokyo-bay/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F158612%2F" data-h="158612" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/31077/31077.jpg" alt="グランドメルキュール那須高原（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">グランドメルキュール那須高原</div>
         <div class="meta">栃木県</div>
+        <div class="facts">楽天の評価 <b>4.23</b>（4,201件）｜最安の目安 <b>8,820円〜</b></div>
         <p class="note">高原リゾートで非日常体験</p>
         <a class="more" href="/yado/grand-mercure-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F31077%2F" data-h="31077" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
-        <div class="name">マホロバ・マインズ三浦</div>
-        <div class="meta">神奈川県</div>
-        <p class="note">三浦海岸一望の温泉プール付きリゾート</p>
-        <a class="more" href="/yado/mahoroba-mines-miura/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F13569%2F" data-h="13569" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
-        <div class="name">万座ホテルジュラク</div>
-        <div class="meta">群馬県</div>
-        <p class="note">万座温泉の絶景露天風呂♨️</p>
-        <a class="more" href="/yado/manza-juraku/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F9154%2F" data-h="9154" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/104529/104529.jpg" alt="亀の井ホテル 九十九里（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">亀の井ホテル 九十九里</div>
+        <div class="meta">千葉県</div>
+        <div class="facts">楽天の評価 <b>4.29</b>（1,619件）｜最安の目安 <b>10,750円〜</b></div>
+        <p class="note">九十九里の海を望む絶景リゾート</p>
+        <a class="more" href="/yado/kamenoi-kujukuri/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F104529%2F" data-h="104529" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li></ul>
     </section>
     <section>
@@ -142,20 +172,18 @@
       <p class="lead">関東近郊にいくつもある、家族向けの定番。</p>
       <ul class="cards">
       <li class="card">
-        <div class="name">亀の井ホテル 鴨川</div>
-        <div class="meta">千葉県</div>
-        <p class="note">鴨川の自然と温泉で子どもとゆっくり</p>
-        <a class="more" href="/yado/kamenoi-kamogawa/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F49322%2F" data-h="49322" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/183257/183257.jpg" alt="亀の井ホテル 日光湯西川（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">亀の井ホテル 日光湯西川</div>
+        <div class="meta">栃木県</div>
+        <div class="facts">楽天の評価 <b>4.12</b>（883件）｜最安の目安 <b>13,380円〜</b></div>
+        <p class="note">オールインクルーシブで温泉三昧♨️</p>
+        <a class="more" href="/yado/kamenoi-nikko-yunishigawa/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F183257%2F" data-h="183257" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
-        <div class="name">亀の井ホテル 大洗</div>
-        <div class="meta">茨城県</div>
-        <p class="note">大洗の海と温泉でリフレッシュ🌊</p>
-        <a class="more" href="/yado/kamenoi-oarai/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F104539%2F" data-h="104539" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/16110/16110.jpg" alt="亀の井ホテル 草津リゾート（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">亀の井ホテル 草津リゾート</div>
         <div class="meta">群馬県</div>
+        <div class="facts">楽天の評価 <b>4.26</b>（1,384件）｜最安の目安 <b>6,951円〜</b></div>
         <p class="note">草津温泉で子どもと入る露天風呂♨️</p>
         <a class="more" href="/yado/kamenoi-kusatsu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F16110%2F" data-h="16110" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li></ul>
@@ -165,43 +193,55 @@
       <p class="lead">子どもが遊べて、大人も温泉でゆっくりできる宿。</p>
       <ul class="cards">
       <li class="card">
-        <div class="name">THE KEY HIGHLAND NASU</div>
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/8643/8643.jpg" alt="鬼怒川温泉 あさや（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">鬼怒川温泉 あさや</div>
         <div class="meta">栃木県</div>
-        <p class="note">森に浮かぶ露天風呂と暖炉でリセット♨️</p>
-        <a class="more" href="/yado/the-key-highland-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F167342%2F" data-h="167342" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+        <div class="facts">楽天の評価 <b>4.62</b>（5,847件）｜最安の目安 <b>20,900円〜</b></div>
+        <p class="note">和洋中バイキングと森の大浴場で子どもが大満足♨️</p>
+        <a class="more" href="/yado/kinugawa-asaya/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F8643%2F" data-h="8643" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
-        <div class="name">グランドメルキュール那須高原</div>
-        <div class="meta">栃木県</div>
-        <p class="note">高原の澄んだ空気と絶景で非日常体験</p>
-        <a class="more" href="/yado/grand-mercure-nasu/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F31077%2F" data-h="31077" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
-      </li>
-      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/68664/68664.jpg" alt="TAOYA日光霧降（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">TAOYA日光霧降</div>
         <div class="meta">栃木県</div>
+        <div class="facts">楽天の評価 <b>4.24</b>（2,613件）｜最安の目安 <b>16,500円〜</b></div>
         <p class="note">ほぼ全込み！霧降高原の自然に囲まれる</p>
         <a class="more" href="/yado/taoya-nikko-kirifuri/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F68664%2F" data-h="68664" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/172913/172913.jpg" alt="箱根 ゆとわ（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">箱根 ゆとわ</div>
         <div class="meta">神奈川県</div>
+        <div class="facts">楽天の評価 <b>4.29</b>（565件）｜最安の目安 <b>10,235円〜</b></div>
         <p class="note">子ども連れに優しい箱根温泉旅館♨️</p>
         <a class="more" href="/yado/hakone-yutowa/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F172913%2F" data-h="172913" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/184829/184829.jpg" alt="箱根ホテル小涌園（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">箱根ホテル小涌園</div>
         <div class="meta">神奈川県</div>
+        <div class="facts">楽天の評価 <b>4.37</b>（746件）｜最安の目安 <b>17,160円〜</b></div>
         <p class="note">ウェルカムベビー認定！0歳から安心の宿</p>
         <a class="more" href="/yado/hakone-kowakien/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F184829%2F" data-h="184829" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li>
       <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/84721/84721.jpg" alt="箱根湯本温泉 天成園（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
         <div class="name">箱根湯本温泉 天成園</div>
         <div class="meta">神奈川県</div>
+        <div class="facts">楽天の評価 <b>4.28</b>（4,926件）｜最安の目安 <b>10,769円〜</b></div>
         <p class="note">大露天風呂と自然美で心が整う♨️</p>
         <a class="more" href="/yado/hakone-tenseien/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F84721%2F" data-h="84721" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
+      </li>
+      <li class="card">
+        <img class="ph" src="https://img.travel.rakuten.co.jp/share/HOTEL/9154/9154.jpg" alt="万座ホテルジュラク（楽天トラベル掲載写真）" loading="lazy" decoding="async" width="640" height="360">
+        <div class="name">万座ホテルジュラク</div>
+        <div class="meta">群馬県</div>
+        <div class="facts">楽天の評価 <b>4.42</b>（2,916件）｜最安の目安 <b>15,000円〜</b></div>
+        <p class="note">万座温泉の絶景オールインクルーシブ</p>
+        <a class="more" href="/yado/manza-juraku/">家族の口コミと決め手を見る →</a><a class="btn" href="https://hb.afl.rakuten.co.jp/hgc/4fee1340.1e8d1067.4fee1341.c2cb8541/_RTLink147857?pc=https%3A%2F%2Fhotel.travel.rakuten.co.jp%2Fhotelinfo%2Fplan%2F9154%2F" data-h="9154" data-pos="matome" rel="sponsored noopener" target="_blank">楽天トラベルで空室を見る</a>
       </li></ul>
     </section>
-  <footer>最終更新 2026/10/25｜Threads @kudo_kazokutabi｜<a href="/about/">運営者情報・プライバシーポリシー</a></footer>
+  <footer>最終更新 2026/11/15｜写真・評価・料金: 楽天トラベル（Supported by Rakuten Developers）｜Threads @kudo_kazokutabi｜<a href="/about/">運営者情報・プライバシーポリシー</a></footer>
 </main>
 <script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-h]');if(!a)return;try{navigator.sendBeacon('/api/click',JSON.stringify({h:a.dataset.h,pos:a.dataset.pos||''}))}catch(_){}});</script>
 </body>
