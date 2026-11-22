@@ -11,35 +11,37 @@
 <link rel="canonical" href="https://kudo-tabi.pages.dev/">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"子連れ宿メモ","alternateName":"kudo-tabi","url":"https://kudo-tabi.pages.dev/"}</script>
 <style>
-  :root { --bg:#faf4ea; --card:#fff; --ink:#332d28; --sub:#80766c; --acc:#e87048; --chip:#fde8dc; --line:#ece4da; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#1f1b18; --card:#2a2521; --ink:#f2ece6; --sub:#b8ada2; --acc:#f08a66; --chip:#4a2f25; --line:#3a332d; } }
+  :root { --bg:#f3f6f5; --card:#fff; --ink:#1f2a27; --sub:#62706b; --acc:#1f6f5c; --btn:#e8590c; --chip:#e4efeb; --line:#dbe3e0; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151b19; --card:#1e2624; --ink:#e9efed; --sub:#a3b0ab; --acc:#4fb79d; --btn:#f06a1f; --chip:#24352f; --line:#2f3d38; } }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif; line-height:1.6; }
   main { max-width:640px; margin:0 auto; padding:20px 16px 48px; }
-  .pr { font-size:12px; color:var(--sub); border:1px solid var(--line); border-radius:8px; padding:6px 10px; margin-bottom:16px; }
+  .pr { font-size:12px; color:var(--sub); border:1px solid var(--line); border-radius:4px; padding:6px 10px; margin-bottom:16px; }
   .chip { display:inline-block; background:var(--chip); color:var(--acc); font-weight:700; font-size:13px; padding:4px 12px; border-radius:999px; }
-  h1 { font-size:24px; margin:10px 0 6px; }
+  h1 { font-size:24px; margin:6px 0 8px; letter-spacing:.02em; }
   .intro { color:var(--sub); font-size:14px; margin:0 0 8px; }
-  h2 { font-size:19px; margin:32px 0 4px; }
+  h2 { font-size:18px; margin:32px 0 6px; border-left:4px solid var(--acc); padding-left:10px; }
   .lead { color:var(--sub); font-size:14px; margin:0 0 12px; }
   .cards { list-style:none; margin:0; padding:0; display:grid; gap:12px; }
-  .card { background:var(--card); border-radius:16px; padding:16px; overflow:hidden; }
-  .ph { display:block; width:calc(100% + 32px); max-width:none; height:auto; aspect-ratio:16/9; object-fit:cover; margin:-16px -16px 12px; background:var(--line); }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px; overflow:hidden; }
+  .ph { display:block; width:calc(100% + 32px); max-width:none; height:auto; aspect-ratio:16/9; object-fit:cover; margin:-16px -16px 12px; background:var(--line); border-radius:0; }
   .facts { font-size:13px; color:var(--sub); margin-top:4px; } .facts b { color:var(--ink); }
   .name { font-weight:700; font-size:17px; }
   .meta { color:var(--sub); font-size:13px; }
   .note { margin:8px 0 12px; font-size:15px; }
-  .more { display:block; text-align:center; color:var(--acc); font-weight:700; text-decoration:none; border:2px solid var(--acc); padding:10px; border-radius:12px; margin-bottom:8px; }
-  .btn { display:block; text-align:center; background:var(--acc); color:#fff; text-decoration:none; font-weight:700; padding:12px; border-radius:12px; }
+  .more { display:block; text-align:center; color:var(--acc); font-weight:700; text-decoration:none; border:1px solid var(--acc); padding:10px; border-radius:4px; margin-bottom:8px; }
+  .btn { display:block; text-align:center; background:var(--btn); color:#fff; text-decoration:none; font-weight:700; padding:12px; border-radius:4px; }
   .sh, .toc { display:none; }
-  .areas { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 4px; } .areas a { background:var(--chip); color:var(--acc); font-weight:700; text-decoration:none; padding:6px 14px; border-radius:999px; font-size:14px; } .areas small { font-weight:400; margin-left:4px; }
+  .areas { display:flex; flex-wrap:wrap; gap:8px; margin:12px 0 4px; } .areas a { background:var(--chip); color:var(--acc); font-weight:700; text-decoration:none; padding:6px 12px; border-radius:4px; font-size:14px; } .areas small { font-weight:400; margin-left:4px; }
+  .site { background:var(--acc); color:#fff; } .site .in { max-width:1040px; margin:0 auto; padding:0 16px; height:48px; display:flex; align-items:center; justify-content:space-between; }
+  .site a { color:#fff; text-decoration:none; } .site .logo { font-weight:800; font-size:17px; letter-spacing:.04em; } .site nav a { font-size:13px; margin-left:16px; opacity:.92; }
   footer { margin-top:36px; color:var(--sub); font-size:12px; }
   /* PC: 左にサイドバー（絞り込み）・右に宿カード2列。スマホ（899px以下）は今のまま */
   @media (min-width: 900px) {
     main { max-width:1040px; padding:28px 24px 56px; display:grid; grid-template-columns:240px minmax(0,1fr); column-gap:32px; align-items:start; }
     main > .pr, main > .chip, main > h1, main > .intro, main > footer { grid-column:1 / -1; }
     main > .intro { max-width:720px; } main > .chip { justify-self:start; }
-    .side { grid-column:1; position:sticky; top:16px; max-height:calc(100vh - 32px); overflow:auto; background:var(--card); border-radius:16px; padding:16px; }
+    .side { grid-column:1; position:sticky; top:16px; max-height:calc(100vh - 32px); overflow:auto; background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px; }
     .content { grid-column:2; }
     .content section:first-child h2 { margin-top:0; }
     .cards { grid-template-columns:1fr 1fr; gap:16px; }
@@ -56,13 +58,13 @@
 </style>
 </head>
 <body>
+<header class="site"><div class="in"><a class="logo" href="/">子連れ宿メモ</a><nav><a href="/ranking/">ランキング</a><a href="/about/">運営者情報</a></nav></div></header>
 <main>
   <div class="pr">PR：このページには楽天トラベルのアフィリエイトリンクを含みます</div>
-  <span class="chip">子連れ宿メモ</span>
   <h1>子連れで外さない宿まとめ</h1>
   <p class="intro">東京から行ける週末旅。Threadsで反応が多かった宿を中心に集めました。評価と最安の目安は楽天トラベルの掲載情報です（2026/11/22時点）。空室・料金は日程で変わるので、リンク先で確認してください。</p>
   <aside class="side">
-    <a class="more" href="/ranking/">🏆 家族の口コミで比べる子連れ宿ランキング →</a>
+    <a class="more" href="/ranking/">家族の口コミで比べる子連れ宿ランキング →</a>
     <div class="sh">エリアから探す</div>
     <nav class="areas"><a href="/area/chiba/">千葉<small>6軒</small></a><a href="/area/tochigi/">栃木<small>11軒</small></a><a href="/area/gunma/">群馬<small>10軒</small></a><a href="/area/kanagawa/">箱根・神奈川<small>5軒</small></a><a href="/area/ibaraki/">茨城<small>3軒</small></a><a href="/area/shizuoka/">伊豆・静岡<small>3軒</small></a></nav>
     <div class="sh">条件から探す</div>
