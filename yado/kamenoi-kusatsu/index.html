@@ -8,19 +8,19 @@
 <link rel="icon" href="/favicon.ico" sizes="48x48"><link rel="icon" href="/icon-192.png" type="image/png" sizes="192x192"><link rel="apple-touch-icon" href="/apple-touch-icon.png"><meta name="theme-color" content="#e87048">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"子連れ宿メモ","item":"https://kudo-tabi.pages.dev/"},{"@type":"ListItem","position":2,"name":"亀の井ホテル 草津リゾートの子連れ口コミ","item":"https://kudo-tabi.pages.dev/yado/kamenoi-kusatsu/"}]}</script>
 <style>
-  :root { --bg:#faf4ea; --card:#fff; --ink:#332d28; --sub:#80766c; --acc:#e87048; --good:#2f8f6a; --warn:#c0673a; --chip:#fde8dc; --line:#ece4da; --bar:#f3ece3; }
-  @media (prefers-color-scheme: dark) { :root { --bg:#1f1b18; --card:#2a2521; --ink:#f2ece6; --sub:#b8ada2; --acc:#f08a66; --good:#6cc9a0; --warn:#f0a070; --chip:#4a2f25; --line:#3a332d; --bar:#35302b; } }
+  :root { --bg:#f3f6f5; --card:#fff; --ink:#1f2a27; --sub:#62706b; --acc:#1f6f5c; --btn:#c2410c; --head:#1f6f5c; --good:#2f8f6a; --warn:#a8551f; --chip:#e4efeb; --line:#dbe3e0; --bar:#e9efed; }
+  @media (prefers-color-scheme: dark) { :root { --bg:#151b19; --card:#1e2624; --ink:#e9efed; --sub:#a3b0ab; --acc:#4fb79d; --btn:#c2410c; --head:#1f6f5c; --good:#6cc9a0; --warn:#f0a070; --chip:#24352f; --line:#2f3d38; --bar:#2a3531; } }
   * { box-sizing:border-box; }
   body { margin:0; background:var(--bg); color:var(--ink); font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Noto Sans JP",sans-serif; line-height:1.7; }
   main { max-width:680px; margin:0 auto; padding:20px 16px 56px; }
   a { color:var(--acc); }
-  .pr { font-size:12px; color:var(--sub); border:1px solid var(--line); border-radius:8px; padding:6px 10px; margin-bottom:14px; }
-  .chip { display:inline-block; background:var(--chip); color:var(--acc); font-weight:700; font-size:13px; padding:3px 12px; border-radius:999px; }
+  .pr { font-size:12px; color:var(--sub); border:1px solid var(--line); border-radius:4px; padding:6px 10px; margin-bottom:14px; }
+  .chip { display:inline-block; background:var(--chip); color:var(--acc); font-weight:700; font-size:13px; padding:3px 12px; border-radius:4px; }
   h1 { font-size:24px; line-height:1.4; margin:10px 0 4px; }
   .meta { color:var(--sub); font-size:14px; margin:0 0 10px; }
   .meta b { color:var(--ink); }
-  .hero { width:100%; border-radius:16px; display:block; margin:8px 0 12px; aspect-ratio:4/3; object-fit:cover; background:var(--line); }
-  section { background:var(--card); border-radius:16px; padding:16px; margin-top:14px; }
+  .hero { width:100%; border-radius:6px; display:block; margin:8px 0 12px; aspect-ratio:4/3; object-fit:cover; background:var(--line); }
+  section { background:var(--card); border:1px solid var(--line); border-radius:6px; padding:16px; margin-top:14px; }
   h2 { font-size:19px; margin:0 0 4px; }
   h3 { font-size:15px; margin:14px 0 6px; }
   .note { color:var(--sub); font-size:13px; margin:0 0 10px; }
@@ -28,7 +28,7 @@
   ul { margin:0; padding-left:1.2em; } li { margin:3px 0; }
   .pn { display:grid; gap:10px; grid-template-columns:1fr; }
   @media (min-width:560px) { .pn { grid-template-columns:1fr 1fr; } }
-  .pn > div { border-radius:12px; padding:10px 12px; background:var(--bg); }
+  .pn > div { border-radius:4px; padding:10px 12px; background:var(--bg); }
   .pn h3 { margin:0 0 6px; }
   .good h3 { color:var(--good); } .warn h3 { color:var(--warn); }
   .cnt { font-weight:700; }
@@ -40,19 +40,23 @@
   .bar i { position:absolute; left:0; top:0; bottom:0; background:var(--good); border-radius:99px; }
   .bar i.w { background:var(--warn); }
   .src { font-size:12px; color:var(--sub); margin:6px 0 0; }
-  .btn { display:block; text-align:center; background:var(--acc); color:#fff; text-decoration:none; font-weight:700; padding:14px; border-radius:12px; margin:14px 0 0; }
-  .btn2 { display:block; text-align:center; color:var(--acc); text-decoration:none; font-weight:700; border:2px solid var(--acc); padding:11px; border-radius:12px; margin:10px 0 0; }
+  .btn { display:block; text-align:center; background:var(--btn); color:#fff; text-decoration:none; font-weight:700; padding:14px; border-radius:4px; margin:14px 0 0; }
+  .btn2 { display:block; text-align:center; color:var(--acc); text-decoration:none; font-weight:700; border:1px solid var(--acc); padding:11px; border-radius:4px; margin:10px 0 0; }
   details { margin-top:10px; } summary { cursor:pointer; font-weight:700; }
+  .site { background:var(--head); } .site .in { max-width:680px; margin:0 auto; padding:0 16px; min-height:48px; display:flex; align-items:center; justify-content:space-between; }
+  .site a { color:#fff; text-decoration:none; } .site .logo { font-weight:800; font-size:17px; letter-spacing:.04em; } .site nav a { white-space:nowrap; font-size:13px; margin-left:16px; opacity:.92; }
   footer { margin-top:28px; color:var(--sub); font-size:12px; }
   .rank li { margin:10px 0; }
-  .areas { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; } .areas a { background:var(--chip); color:var(--acc); font-weight:700; text-decoration:none; padding:6px 14px; border-radius:999px; font-size:14px; } .areas small { font-weight:400; margin-left:4px; }
+  .areas { display:flex; flex-wrap:wrap; gap:8px; margin:8px 0; } .areas a { background:var(--chip); color:var(--acc); font-weight:700; text-decoration:none; padding:6px 12px; border-radius:4px; font-size:14px; } .areas small { font-weight:400; margin-left:4px; }
   .rel { list-style:none; padding:0; } .rel li { margin:0; padding:10px 0; border-bottom:1px solid var(--line); } .rel li:last-child { border-bottom:0; }
 </style>
-</head><body><main>
+</head><body>
+<header class="site"><div class="in"><a class="logo" href="/">子連れ宿メモ</a><nav><a href="/ranking/">ランキング</a><a href="/about/">運営者情報</a></nav></div></header>
+<main>
 <div class="pr">PR：このページには楽天トラベルのアフィリエイトリンクを含みます</div>
   <span class="chip">子連れ宿メモ｜群馬・草津</span>
   <h1>亀の井ホテル 草津リゾートの子連れ口コミ</h1>
-  <p class="meta">楽天の評価 <b>4.26</b>（1384件）｜最安の目安 <b>6,951円〜</b>（2026/11/18時点）</p>
+  <p class="meta">楽天の評価 <b>4.26</b>（1390件）｜最安の目安 <b>6,006円〜</b>（2026/11/22時点）</p>
   <p class="lead">品数豊富な朝夕ビュッフェと草津らしい泉質、湯畑への無料送迎を評価する家族の声が中心です。一方で大浴場までの階段や脱衣所の衛生、壁の薄さ、食事の時間制限を気にする声も見られます。子どもの遊び場や赤ちゃん連れの設備、駐車場の使い勝手もまとめました。</p>
   <p class="meta">最終更新 2026/11/01（口コミ集計 2026/10/07）</p>
   <img class="hero" src="https://img.travel.rakuten.co.jp/share/HOTEL/16110/16110.jpg" alt="亀の井ホテル 草津リゾート（楽天トラベル掲載写真）" loading="eager">
@@ -183,5 +187,5 @@
   <section><h2>同じ条件の宿を探す</h2><nav class="areas"><a href="/theme/kids/">キッズルーム・遊び場<small>20軒</small></a></nav></section>
   <a class="btn2" href="/ranking/">口コミで比べる子連れ宿ランキングへ</a>
   <p style="margin-top:18px"><a href="/">← 子連れで外さない宿まとめへ</a></p>
-  <footer>口コミ集計: 楽天トラベルの口コミを分析（2026-10-07）。本文は引用していません。宿の情報: 楽天トラベル（2026/11/18取得）と各公式サイト。最新の情報は予約ページで確認してください。<br>Supported by Rakuten Developers｜Threads @kudo_kazokutabi｜<a href="/about/">運営者情報・プライバシーポリシー</a></footer>
+  <footer>口コミ集計: 楽天トラベルの口コミを分析（2026-10-07）。本文は引用していません。宿の情報: 楽天トラベル（2026/11/22取得）と各公式サイト。最新の情報は予約ページで確認してください。<br>Supported by Rakuten Developers｜Threads @kudo_kazokutabi｜<a href="/about/">運営者情報・プライバシーポリシー</a></footer>
 </main><script>document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[data-h]');if(!a)return;try{navigator.sendBeacon('/api/click',JSON.stringify({h:a.dataset.h,pos:a.dataset.pos||''}))}catch(_){}});</script></body></html>
